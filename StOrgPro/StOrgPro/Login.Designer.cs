@@ -40,9 +40,10 @@
             // SalirBtn
             // 
             this.SalirBtn.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.SalirBtn.Location = new System.Drawing.Point(147, 147);
+            this.SalirBtn.Location = new System.Drawing.Point(196, 181);
+            this.SalirBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.SalirBtn.Name = "SalirBtn";
-            this.SalirBtn.Size = new System.Drawing.Size(80, 25);
+            this.SalirBtn.Size = new System.Drawing.Size(107, 31);
             this.SalirBtn.TabIndex = 0;
             this.SalirBtn.Text = "Exit";
             this.SalirBtn.UseVisualStyleBackColor = true;
@@ -51,55 +52,62 @@
             // UserText
             // 
             this.UserText.AcceptsTab = true;
-            this.UserText.Location = new System.Drawing.Point(91, 27);
+            this.UserText.Location = new System.Drawing.Point(121, 33);
+            this.UserText.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.UserText.Name = "UserText";
-            this.UserText.Size = new System.Drawing.Size(137, 20);
+            this.UserText.Size = new System.Drawing.Size(181, 22);
             this.UserText.TabIndex = 2;
             this.UserText.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // PasswordText
             // 
-            this.PasswordText.Location = new System.Drawing.Point(91, 62);
+            this.PasswordText.Location = new System.Drawing.Point(121, 76);
+            this.PasswordText.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.PasswordText.Name = "PasswordText";
             this.PasswordText.PasswordChar = '*';
-            this.PasswordText.Size = new System.Drawing.Size(137, 20);
+            this.PasswordText.Size = new System.Drawing.Size(181, 22);
             this.PasswordText.TabIndex = 3;
             this.PasswordText.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // UserLabel
             // 
             this.UserLabel.AutoSize = true;
-            this.UserLabel.Location = new System.Drawing.Point(26, 29);
+            this.UserLabel.Location = new System.Drawing.Point(35, 36);
+            this.UserLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.UserLabel.Name = "UserLabel";
-            this.UserLabel.Size = new System.Drawing.Size(43, 13);
+            this.UserLabel.Size = new System.Drawing.Size(57, 17);
             this.UserLabel.TabIndex = 4;
             this.UserLabel.Text = "Usuario";
             this.UserLabel.Click += new System.EventHandler(this.label1_Click);
             // 
             // AceptarBtn
             // 
-            this.AceptarBtn.Location = new System.Drawing.Point(147, 113);
+            this.AceptarBtn.Location = new System.Drawing.Point(196, 139);
+            this.AceptarBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.AceptarBtn.Name = "AceptarBtn";
-            this.AceptarBtn.Size = new System.Drawing.Size(80, 25);
+            this.AceptarBtn.Size = new System.Drawing.Size(107, 31);
             this.AceptarBtn.TabIndex = 5;
             this.AceptarBtn.Text = "Aceptar";
             this.AceptarBtn.UseVisualStyleBackColor = true;
+            this.AceptarBtn.Click += new System.EventHandler(this.AceptarBtn_Click);
             // 
             // PasswordLabel
             // 
             this.PasswordLabel.AutoSize = true;
-            this.PasswordLabel.Location = new System.Drawing.Point(25, 62);
+            this.PasswordLabel.Location = new System.Drawing.Point(33, 76);
+            this.PasswordLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.PasswordLabel.Name = "PasswordLabel";
-            this.PasswordLabel.Size = new System.Drawing.Size(53, 13);
+            this.PasswordLabel.Size = new System.Drawing.Size(69, 17);
             this.PasswordLabel.TabIndex = 6;
             this.PasswordLabel.Text = "Password";
             // 
             // HidePassword
             // 
             this.HidePassword.AutoSize = true;
-            this.HidePassword.Location = new System.Drawing.Point(91, 91);
+            this.HidePassword.Location = new System.Drawing.Point(121, 112);
+            this.HidePassword.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.HidePassword.Name = "HidePassword";
-            this.HidePassword.Size = new System.Drawing.Size(110, 17);
+            this.HidePassword.Size = new System.Drawing.Size(143, 21);
             this.HidePassword.TabIndex = 7;
             this.HidePassword.Text = "Mostrar Password";
             this.HidePassword.UseVisualStyleBackColor = true;
@@ -107,10 +115,10 @@
             // 
             // Login
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.SalirBtn;
-            this.ClientSize = new System.Drawing.Size(241, 202);
+            this.ClientSize = new System.Drawing.Size(321, 249);
             this.Controls.Add(this.HidePassword);
             this.Controls.Add(this.PasswordLabel);
             this.Controls.Add(this.AceptarBtn);
@@ -118,6 +126,7 @@
             this.Controls.Add(this.PasswordText);
             this.Controls.Add(this.UserText);
             this.Controls.Add(this.SalirBtn);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "Login";
             this.Text = "Login";
             this.ResumeLayout(false);
