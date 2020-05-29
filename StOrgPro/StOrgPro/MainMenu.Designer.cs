@@ -54,6 +54,7 @@
             this.BtnStorage.TabIndex = 1;
             this.BtnStorage.Text = "Gestionar Almacenes";
             this.BtnStorage.UseVisualStyleBackColor = true;
+            this.BtnStorage.Click += new System.EventHandler(this.BtnStorage_Click);
             // 
             // BtnCatalog
             // 
@@ -63,6 +64,7 @@
             this.BtnCatalog.TabIndex = 2;
             this.BtnCatalog.Text = "Gestionar Catalogo";
             this.BtnCatalog.UseVisualStyleBackColor = true;
+            this.BtnCatalog.Click += new System.EventHandler(this.BtnCatalog_Click);
             // 
             // BtnInventary
             // 
@@ -72,6 +74,7 @@
             this.BtnInventary.TabIndex = 3;
             this.BtnInventary.Text = "Gestion de Inventario";
             this.BtnInventary.UseVisualStyleBackColor = true;
+            this.BtnInventary.Click += new System.EventHandler(this.BtnInventary_Click);
             // 
             // BtnHiistory
             // 

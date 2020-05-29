@@ -6,13 +6,17 @@ namespace Engine
     {
         public string UserName { get; set; }
         private string Password { get; set; }
-        public UserType Type { get; set; }
+        public bool PermitUserManagement { get; set; }
+        public bool PermitCatalogManagement { get; set; }
+        public bool PermitInventoryManagement { get; set; }
+        public bool PermitStoragesManagement { get; set; }
+        public bool PermitHistoryViewer { get; set; }
 
-        public User(string userName, string password, UserType type)
+        public User(string userName, string password, bool permitUserManagement = false,
+            bool permitCatalogManagement = false, bool permitInventoryManagement = false, bool permitStoragesManagement = false)
         {
             UserName = userName;
             Password = password;
-            Type = type;
         }
 
         public void ValidatePassword(string PasswordToValidate)
@@ -22,13 +26,5 @@ namespace Engine
                 throw new FailedLogin();
             }
         }
-    }
-
-    public enum UserType
-    {
-        Owner,
-        Supervisor,
-        Manager,
-        LoginProfile
     }
 }

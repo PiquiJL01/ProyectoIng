@@ -1,4 +1,5 @@
 ﻿using Engine;
+using StOrgPro.Users;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -19,27 +20,75 @@ namespace StOrgPro
         {
             InitializeComponent();
             user = CurrentUser;
-            if (user.Type == UserType.Owner)
-            {
+            setMenu();
+        }
 
-            }
-            else if (user.Type == UserType.Supervisor)
+        private void setMenu()
+        {
+            if (!user.PermitUserManagement)
             {
-
+                BtnUser.Text = "Gestion de Usuario";
             }
-            else if (user.Type == UserType.Manager)
+
+            if (!user.PermitStoragesManagement)
             {
-
+                BtnStorage.Enabled = false;
             }
-            else throw new WrongUserType();
+
+            if (!user.PermitCatalogManagement)
+            {
+                BtnCatalog.Enabled = false;
+            }
+
+            if (!user.PermitInventoryManagement)
+            {
+                BtnInventary.Enabled = false;
+            }
+
+            if (!user.PermitHistoryViewer)
+            {
+                BtnHiistory.Enabled = false;
+            }
         }
 
         private void BtnUser_Click(object sender, EventArgs e)
         {
             this.Hide();
-            UsersMenu menu = new UsersMenu();
-            menu.ShowDialog();
-            this.Close();
+            if (user.PermitUserManagement)
+            {
+                UsersMenu usersMenu = new UsersMenu();
+                usersMenu.ShowDialog();
+            }
+            else
+            {
+                ManageMyUser manageMyUser = new ManageMyUser();
+                manageMyUser.ShowDialog();
+            }
+            this.Show();
+        }
+
+        private void BtnStorage_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            StoragesMenu storagesMenu = new StoragesMenu();
+            storagesMenu.ShowDialog();
+            this.Show();
+        }
+
+        private void BtnCatalog_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            CatalogMenu catalogMenu = new CatalogMenu();
+            catalogMenu.ShowDialog();
+            this.Show();
+        }
+
+        private void BtnInventary_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            InventoryMenu inventoryMenu = new InventoryMenu();
+            inventoryMenu.ShowDialog();
+            this.Show();
         }
     }
 }
