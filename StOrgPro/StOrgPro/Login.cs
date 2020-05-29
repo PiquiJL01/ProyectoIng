@@ -23,11 +23,6 @@ namespace StOrgPro
             System.Windows.Forms.Application.Exit();
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void HidePassword_CheckedChanged(object sender, EventArgs e)
         {
             PasswordText.PasswordChar = HidePassword.Checked ? '\0' : '*';
@@ -35,21 +30,51 @@ namespace StOrgPro
 
         private void AceptarBtn_Click(object sender, EventArgs e)
         {
+            User user = new User(UserText.Text, PasswordText.Text, UserType.LoginProfile);
+
             try
             {
-                User user = new User(UserText.Text, PasswordText.Text, null)
-                //login();
+                login(ref user);
             }
-            catch (FailedLogin)
+            catch (Exception error)
             {
-                // new FailedLoginWindow();
+                user = null;
+                this.Hide();
+                Error failedLogin = new Error(error);
+                failedLogin.ShowDialog();
+                UserText.Text = "";
+                PasswordText.Text = "";
+                this.Show();
                 return;
             }
 
             this.Hide();
-            Menu menu = new Menu();
+            Menu menu = new Menu(user);
             menu.ShowDialog();
             this.Close();
+        }
+
+        private void login(ref User user) //test login for different user types
+        {
+            if (user.UserName == "admin")
+            {
+                user.ValidatePassword("admin");
+                user.Type = UserType.Owner;
+            }
+            else if (user.UserName == "manager")
+            {
+                user.ValidatePassword("manager");
+                user.Type = UserType.Supervisor;
+            }
+            else if (user.UserName == "user")
+            {
+                user.ValidatePassword("user");
+                user.Type = UserType.Manager;
+            }
+            else
+            {
+                throw new FailedLogin();
+            }
         }
     }
 }

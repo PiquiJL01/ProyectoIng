@@ -15,14 +15,12 @@ namespace Engine
             Type = type;
         }
 
-        public bool ValidatePassword(string PasswordToValidate)
+        public void ValidatePassword(string PasswordToValidate)
         {
-            if (Password == PasswordToValidate)
+            if (!(Password == PasswordToValidate))
             {
-                return true;
+                throw new FailedLogin();
             }
-
-            throw new FailedLogin();
         }
     }
 
@@ -30,6 +28,7 @@ namespace Engine
     {
         Owner,
         Supervisor,
-        Manager
+        Manager,
+        LoginProfile
     }
 }

@@ -78,7 +78,6 @@
             this.UserLabel.Size = new System.Drawing.Size(57, 17);
             this.UserLabel.TabIndex = 4;
             this.UserLabel.Text = "Usuario";
-            this.UserLabel.Click += new System.EventHandler(this.label1_Click);
             // 
             // AceptarBtn
             // 
