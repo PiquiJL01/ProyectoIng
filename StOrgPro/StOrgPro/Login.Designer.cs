@@ -41,7 +41,7 @@
             // 
             this.SalirBtn.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.SalirBtn.Location = new System.Drawing.Point(196, 181);
-            this.SalirBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.SalirBtn.Margin = new System.Windows.Forms.Padding(4);
             this.SalirBtn.Name = "SalirBtn";
             this.SalirBtn.Size = new System.Drawing.Size(107, 31);
             this.SalirBtn.TabIndex = 0;
@@ -53,7 +53,7 @@
             // 
             this.UserText.AcceptsTab = true;
             this.UserText.Location = new System.Drawing.Point(121, 33);
-            this.UserText.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.UserText.Margin = new System.Windows.Forms.Padding(4);
             this.UserText.Name = "UserText";
             this.UserText.Size = new System.Drawing.Size(181, 22);
             this.UserText.TabIndex = 2;
@@ -62,7 +62,7 @@
             // PasswordText
             // 
             this.PasswordText.Location = new System.Drawing.Point(121, 76);
-            this.PasswordText.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.PasswordText.Margin = new System.Windows.Forms.Padding(4);
             this.PasswordText.Name = "PasswordText";
             this.PasswordText.PasswordChar = '*';
             this.PasswordText.Size = new System.Drawing.Size(181, 22);
@@ -82,7 +82,7 @@
             // AceptarBtn
             // 
             this.AceptarBtn.Location = new System.Drawing.Point(196, 139);
-            this.AceptarBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.AceptarBtn.Margin = new System.Windows.Forms.Padding(4);
             this.AceptarBtn.Name = "AceptarBtn";
             this.AceptarBtn.Size = new System.Drawing.Size(107, 31);
             this.AceptarBtn.TabIndex = 5;
@@ -104,7 +104,7 @@
             // 
             this.HidePassword.AutoSize = true;
             this.HidePassword.Location = new System.Drawing.Point(121, 112);
-            this.HidePassword.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.HidePassword.Margin = new System.Windows.Forms.Padding(4);
             this.HidePassword.Name = "HidePassword";
             this.HidePassword.Size = new System.Drawing.Size(143, 21);
             this.HidePassword.TabIndex = 7;
@@ -125,7 +125,7 @@
             this.Controls.Add(this.PasswordText);
             this.Controls.Add(this.UserText);
             this.Controls.Add(this.SalirBtn);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Login";
             this.Text = "Login";
             this.ResumeLayout(false);

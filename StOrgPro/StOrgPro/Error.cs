@@ -13,21 +13,30 @@ namespace StOrgPro
 {
     public partial class Error : Form
     {
-
         public Error(dynamic error)
         {
             InitializeComponent();
             if (error is FailedLogin)
             {
                 Message.Text = "Usuario o Password Invalido";
-                Message.Invalidate();
-                Message.Update();
             }
-        }
-
-        private void Error_Load(object sender, EventArgs e)
-        {
-            
+            else if (error is NoDBConnection)
+            {
+                Message.Text = "No se pude establecer conexion";
+            }
+            else if (error is FailedToRemove)
+            {
+                Message.Text = "Movimiento Invalido";
+            }
+            else if (error is WrongUserType)
+            {
+                Message.Text = "Usuario Invalido";
+            }
+            else
+            {
+                Message.Text = "Error Desconocido";
+            }
+            Message.Refresh();
         }
 
         private void BtnOk_Click(object sender, EventArgs e)

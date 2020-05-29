@@ -49,7 +49,7 @@ namespace StOrgPro
             }
 
             this.Hide();
-            Menu menu = new Menu(user);
+            MainMenu menu = new MainMenu(user);
             menu.ShowDialog();
             this.Close();
         }

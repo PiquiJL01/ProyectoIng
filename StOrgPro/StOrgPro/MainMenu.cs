@@ -11,18 +11,14 @@ using System.Windows.Forms;
 
 namespace StOrgPro
 {
-    public partial class Menu : Form
+    public partial class MainMenu : Form
     {
         private User user;
 
-        public Menu(User currentUser)
+        public MainMenu(User CurrentUser)
         {
             InitializeComponent();
-            user = currentUser;
-        }
-
-        private void Menu_Load(object sender, System.EventHandler e)
-        {
+            user = CurrentUser;
             if (user.Type == UserType.Owner)
             {
 
@@ -36,6 +32,14 @@ namespace StOrgPro
 
             }
             else throw new WrongUserType();
+        }
+
+        private void BtnUser_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            UsersMenu menu = new UsersMenu();
+            menu.ShowDialog();
+            this.Close();
         }
     }
 }
