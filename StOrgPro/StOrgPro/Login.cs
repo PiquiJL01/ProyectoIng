@@ -37,6 +37,7 @@ namespace StOrgPro
         {
             try
             {
+                User user = new User(UserText.Text, PasswordText.Text, null)
                 //login();
             }
             catch (FailedLogin)

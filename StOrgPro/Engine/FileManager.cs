@@ -6,5 +6,6 @@ namespace Engine
 {
     public class FileManager
     {
+        User
     }
 }
