@@ -1,10 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
 
-namespace Engine
+namespace ClassLibrary1
 {
-    public class Storage
+    class Storage
     {
         public int ID { get; set; }
         public string Name { get; set; }
