@@ -30,11 +30,12 @@ namespace StOrgPro
 
         private void AceptarBtn_Click(object sender, EventArgs e)
         {
-            User user = new User(UserText.Text, PasswordText.Text);
+            User user;
 
             try
             {
-                login(ref user);
+                FileManager fileManager = new FileManager();
+                user = fileManager.Login(UserText.Text, PasswordText.Text);
             }
             catch (Exception error)
             {
@@ -52,41 +53,6 @@ namespace StOrgPro
             MainMenu menu = new MainMenu(user);
             menu.ShowDialog();
             this.Close();
-        }
-
-        private void login(ref User user) //test login for different user types
-        {
-            if (user.UserName == "admin")
-            {
-                user.ValidatePassword("admin");
-                user.PermitUserManagement = true;
-                user.PermitStoragesManagement = true;
-                user.PermitCatalogManagement = true;
-                user.PermitInventoryManagement = true;
-                user.PermitHistoryViewer = true;
-            }
-            else if (user.UserName == "super")
-            {
-                user.ValidatePassword("super"); 
-                user.PermitUserManagement = false;
-                user.PermitStoragesManagement = true;
-                user.PermitCatalogManagement = true;
-                user.PermitInventoryManagement = false;
-                user.PermitHistoryViewer = true;
-            }
-            else if (user.UserName == "manager")
-            {
-                user.ValidatePassword("manager");
-                user.PermitUserManagement = false;
-                user.PermitStoragesManagement = true;
-                user.PermitCatalogManagement = false;
-                user.PermitInventoryManagement = true;
-                user.PermitHistoryViewer = false;
-            }
-            else
-            {
-                throw new FailedLogin();
-            }
         }
     }
 }

@@ -12,11 +12,17 @@ namespace Engine
         public bool PermitStoragesManagement { get; set; }
         public bool PermitHistoryViewer { get; set; }
 
-        public User(string userName, string password, bool permitUserManagement = false,
-            bool permitCatalogManagement = false, bool permitInventoryManagement = false, bool permitStoragesManagement = false)
+        public User(string userName, string password, bool permitUserManagement,
+            bool permitCatalogManagement, bool permitInventoryManagement, 
+            bool permitStoragesManagement, bool permitHistoryViewer)
         {
             UserName = userName;
             Password = password;
+            PermitUserManagement = permitUserManagement;
+            PermitCatalogManagement = permitCatalogManagement;
+            PermitInventoryManagement = permitInventoryManagement;
+            PermitStoragesManagement = permitStoragesManagement;
+            PermitHistoryViewer = permitHistoryViewer; 
         }
 
         public void ValidatePassword(string PasswordToValidate)
